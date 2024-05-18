@@ -1,4 +1,30 @@
-The `AuthService.cs` and `Program.cs` files are key components of the AuthCore application. Here's a brief explanation of each:
+**AuthCore** is an ASP.NET Core authentication application that leverages .NET 8 minimal API and JWT (JSON Web Token) authentication. This application is designed to provide a secure and efficient way to manage user authentication in your ASP.NET Core applications.
+
+Securing user authentication is a critical aspect of any application. Here are some best practices:
+
+1. **Password Hashing and Salting**: Never store passwords in plain text. Always hash and salt passwords before storing them. This makes it difficult for an attacker to retrieve the original password even if they gain access to your database.
+
+2. **Use HTTPS**: Always use HTTPS for communication, especially when transmitting sensitive data like usernames and passwords. This prevents attackers from eavesdropping on the data being transmitted.
+
+3. **Implement Rate Limiting**: Implement rate limiting on login attempts to prevent brute force attacks.
+
+4. **Use JWTs Wisely**: If you're using JSON Web Tokens (JWTs), ensure they are stored securely on the client side. Avoid storing them in local storage as they can be susceptible to cross-site scripting (XSS) attacks.
+
+5. **Token Expiration**: Implement token expiration. This means that even if an attacker gets hold of a token, they can only use it for a limited time.
+
+6. **Validate User Input**: Always validate user input on the server side to prevent SQL injection and other similar attacks.
+
+7. **Use Two-Factor Authentication (2FA)**: 2FA adds an extra layer of security by requiring users to verify their identity using a second method, in addition to username and password.
+
+8. **Regularly Update and Patch Your Systems**: Ensure that all your systems, including servers and software, are regularly updated and patched with the latest security updates.
+
+9. **Use Secure Password Policies**: Enforce secure password policies, such as minimum length, requiring a mix of letters, numbers, and special characters, and regular password changes.
+
+10. **Encrypt Sensitive Data**: If you need to store sensitive data, make sure it's encrypted using a strong encryption algorithm.
+
+Remember, security is a continuous process and requires regular review and updates to keep up with new threats and vulnerabilities.
+
+
 
 ## AuthService.cs
 
@@ -39,3 +65,13 @@ The main components of the AuthCore application are:
 5. `Properties/launchSettings.json`: This file contains settings for launching the application, including the URLs for the application when running in different environments (http, https, IIS Express).
 
 These components work together to create a secure authentication solution using JWT and .NET 8 minimal API.
+
+  
+  
+    
+### References
+    The following references were used to create this project
+
+1. [GitHub - zangassis-auth-core- This project contains a sample ASP.NET Core app. This app is an example of the article I produc.url](..%2FGitHub%20-%20zangassis-auth-core-%20This%20project%20contains%20a%20sample%20ASP.NET%20Core%20app.%20This%20app%20is%20an%20example%20of%20the%20article%20I%20produc.url)  
+2. [JSON Web Tokens - jwt.io.url](..%2FJSON%20Web%20Tokens%20-%20jwt.io.url)  
+3. [New in .NET 8- ASP.NET Core Identity and How to Implement It.url](..%2FNew%20in%20.NET%208-%20ASP.NET%20Core%20Identity%20and%20How%20to%20Implement%20It.url)
